@@ -8,6 +8,7 @@ var morgan      = require('morgan');
 var mongoose    = require('mongoose');
 
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
+
 var config = require('./config'); // get our config file
 var User   = require('./app/models/user'); // get our mongoose model
 
@@ -37,11 +38,16 @@ app.use(morgan('dev'));
 // =================================================================
 // routes ==========================================================
 // =================================================================
+app.get('/', function(req, res) {
+	res.send('Hello! The API is at http://localhost:' + port + '/api');
+});
+
+
 app.get('/seed', function(req, res) {
 
 	var nick = new User({ 
-		name: 'mitchy', 
-		email: 'nick.mitchell@beamenergylabs.com',
+		name: 'mitchy1', 
+		email: 'nick.mitchell1@beamenergylabs.com',
 		password: 'password',
 		admin: true 
 	});
@@ -90,10 +96,7 @@ app.post('/register', function(req, res) {
 
 
 
-// basic route (http://localhost:8080)
-app.get('/', function(req, res) {
-	res.send('Hello! The API is at http://localhost:' + port + '/api');
-});
+
 
 // ---------------------------------------------------------
 // get an instance of the router for api routes
