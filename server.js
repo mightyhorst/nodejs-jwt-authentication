@@ -37,26 +37,6 @@ app.use(morgan('dev'));
 // =================================================================
 // routes ==========================================================
 // =================================================================
-app.get('/setup', function(req, res) {
-
-	// create a sample user
-	var nick = new User({ 
-		name: 'mitchy', 
-		email: 'nick.mitchell@beamenergylabs.com',
-		password: 'password',
-		admin: true 
-	});
-	nick.save(function(err) {
-		if (err) throw err;
-
-		console.log('User saved successfully');
-		res.json({ success: true });
-	});
-});
-
-
-
-
 app.get('/seed', function(req, res) {
 
 	var nick = new User({ 

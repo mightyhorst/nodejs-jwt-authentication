@@ -7,17 +7,21 @@ This is a starting point to demonstrate the method of authentication by verifyin
 ## Requirements
 
 - node and npm [https://www.dyclassroom.com/howto-mac/how-to-install-nodejs-and-npm-on-mac-using-homebrew](https://www.dyclassroom.com/howto-mac/how-to-install-nodejs-and-npm-on-mac-using-homebrew)
+- nodemon [https://github.com/remy/nodemon](https://github.com/remy/nodemon)
 - postman [https://www.getpostman.com/apps](https://www.getpostman.com/apps)
 - mongodb [https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 
-## Usage
+## Install
 
 1. Clone the repo: `git clone https://github.com/mitni455/nodejs-jwt-authentication.git`
 2. Install dependencies: `npm install`
 3. Optional - Change SECRET in `config.js`
 4. Optional - Add your own MongoDB database to `config.js`
-5. Start the server: `node server.js`
-6. Create sample user by visiting: `http://localhost:3333/setup`
+
+## Run
+1. Open a new terminal and run the mongo database `mongod`
+2. Start the server: `nodemon server.js`
+3. Create sample user by visiting: `http://localhost:3333/seed`
 
 Once everything is set up, we can begin to use our app by creating and verifying tokens.
 
