@@ -2,10 +2,12 @@
 // get the packages we need ========================================
 // =================================================================
 var express 	= require('express');
+var cors 		= require('cors')
 var app         = express();
 var bodyParser  = require('body-parser');
 var morgan      = require('morgan');
 var mongoose    = require('mongoose');
+
 
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 
@@ -32,6 +34,14 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 
+
+/**
+*
+*
+* CORS support 
+*
+**/
+app.use(cors())
 
 
 
